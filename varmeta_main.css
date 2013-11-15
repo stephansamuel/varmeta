@@ -1,0 +1,60 @@
+
+.varmeta_field_item {
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 1em;
+	margin-bottom: 10px;
+}
+.varmeta_field_text {
+	font-size: 110%;
+}
+.varmeta_field_controls {
+	text-align: right;
+	display: inline-block;
+	width: 80%;
+}
+.varmeta_field_controls a {
+	margin-left: 2em;
+}
+#varmeta_overlay {
+	/*visibility: hidden;*/
+	display: none;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width:100%;
+	height:100%;
+	text-align:center;
+	z-index: 1000;
+	filter:alpha(opacity=50);
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+	background:#000; 
+}
+#varmeta_overlay_box {
+	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+
+	background:#eee;
+	width: 500px;
+
+	position:absolute;
+	z-index:5000;
+	
+	display:none;
+}
+
+#varmeta_dialog {
+	position:absolute;
+	width:500px;
+	margin: 100px auto;
+	background-color: #fff;
+	border:2px solid #000;
+	padding:15px;
+	text-align:center;
+	opacity: 1;
+}

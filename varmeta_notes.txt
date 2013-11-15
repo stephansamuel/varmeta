@@ -1,0 +1,6 @@
+
+General help:
+http://ditio.net/2007/08/09/how-to-create-wordpress-plugin-from-a-scratch/
+
+CSS dialog from here:
+http://www.queness.com/post/1696/create-a-beautiful-looking-custom-dialog-box-with-jquery-and-css3
