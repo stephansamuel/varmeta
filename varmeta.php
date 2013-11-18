@@ -46,9 +46,17 @@ function varmeta_register_settings() {
 		register_setting($options->Group, $key);
 	}
 	$scripttag = 'varmeta_main';
+
+	$SCRIPT_FILES = "varmeta_main, varmeta_support";
+	$SCRIPT_INCLUDES = "jquery";
 	
-	wp_register_script($scripttag, plugins_url("varmeta_main.js", __FILE__), array('jquery'));
-	wp_enqueue_script($scripttag);
+	$includes = explode(',', $SCRIPT_INCLUDES);	
+	foreach (explode(",", $SCRIPT_FILES) as $file) {	
+		$name = trim($file) . ".js";
+		$tag = "$scripttag_" . trim($file);
+		wp_register_script($tag, plugins_url($name, __FILE__), $includes);
+		wp_enqueue_script($tag);
+	}
 	
 	wp_register_style($scripttag, plugins_url("varmeta_main.css", __FILE__));
 	wp_enqueue_style($scripttag);

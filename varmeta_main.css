@@ -5,19 +5,30 @@
 	padding: 1em;
 	margin-bottom: 10px;
 }
+
 .varmeta_field_text {
 	font-size: 110%;
 }
+
 .varmeta_field_controls {
+	float: right;
 	text-align: right;
 	display: inline-block;
-	width: 80%;
+	margin-right: 3em;
 }
+
+.varmeta_field_options {
+	margin-top: 6px;
+	margin-bottom: -2px;
+	padding-left: 2em;
+	color: gray;
+}
+
 .varmeta_field_controls a {
 	margin-left: 2em;
 }
+
 #varmeta_overlay {
-	/*visibility: hidden;*/
 	display: none;
 	position: absolute;
 	left: 0px;
@@ -32,6 +43,7 @@
 	opacity: 0.5;
 	background:#000; 
 }
+
 #varmeta_overlay_box {
 	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
@@ -55,6 +67,14 @@
 	background-color: #fff;
 	border:2px solid #000;
 	padding:15px;
-	text-align:center;
+	text-align:left;
 	opacity: 1;
+}
+
+.varmeta_dialog_close {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	border: 1px solid black;
+	padding: 4px 8px 4px 8px;
 }

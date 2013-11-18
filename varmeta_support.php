@@ -15,15 +15,7 @@ function varmeta_create_id() {
 
 function varmeta_encode_field_list($list) {
 	// TODO check type
-	$result = "";
-	foreach ($list as $field) {
-		$result .= "{{$field->ID}:({$field->Type})({$field->Name}):";
-		foreach ($field->Options as $opt) {
-			$result .= "($opt)";
-		}
-		$result .= "}";
-	}
-	return $result;
+	return esc_attr(json_encode($list));
 }
 
 class VarmetaField {
@@ -32,15 +24,14 @@ class VarmetaField {
 	public $Type;
 	public $Options = array();
 	
-	public function __construct($n, $t, $o = NULL) {
+	public function __construct($n, $t, $o = NULL, $i = NULL) {
 		// TODO check types
+		$this->ID = NULL == $i ? varmeta_create_id() : $i;
 		$this->Name = $n;
 		$this->Type = $t;
 		if (!is_null($o)) {
 			$this->Options = $o;
 		}
-		
-		$this->ID = varmeta_create_id();
 	}
 }
 
@@ -56,7 +47,7 @@ class VarmetaOptions {
 
 	public function __construct() {
 		$this->external["Fields"][] = new VarmetaField("Hard1", "text");
-		$this->external["Fields"][] = new VarmetaField("Hard2", "text", array("o1", "o2", "o3"));
+		$this->external["Fields"][] = new VarmetaField("Hard2", "options", array("o1", "o2", "o3"));
 	}
 	
 	public function __get($name) {
